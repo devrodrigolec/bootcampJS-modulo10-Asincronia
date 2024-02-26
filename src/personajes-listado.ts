@@ -25,6 +25,14 @@ const crearImagenPersonaje = (url: string, alt: string): HTMLImageElement => {
   return imagen;
 };
 
+const gestionarMensajeUsuario = (texto: string) => {
+  const mensajeHTML = document.querySelector("#mensaje");
+
+  if (mensajeHTML && mensajeHTML instanceof HTMLDivElement) {
+    mensajeHTML.textContent = texto;
+  }
+};
+
 const crearContenedorPersonaje = (personaje: Personaje): HTMLDivElement => {
   const habilidadesAString = personaje.habilidades.reduce(
     (valorAnterior, valorActual) =>
@@ -72,24 +80,21 @@ const pintarPersonajes = async (personajes: Personaje[]): Promise<void> => {
 
 const filtrarPersonajes = (personajes: Personaje[]) => {
   const stringFiltro = document.querySelector("#input-filtrar-nombre");
-  const mensajeHTML = document.querySelector("#mensaje");
-  if (
-    stringFiltro &&
-    stringFiltro instanceof HTMLInputElement &&
-    mensajeHTML &&
-    mensajeHTML instanceof HTMLDivElement
-  ) {
+
+  if (stringFiltro && stringFiltro instanceof HTMLInputElement) {
     if (stringFiltro.value === "") {
+      gestionarMensajeUsuario('')
       return personajes;
     }
     const personajesFiltrados = personajes.filter((personaje) =>
       personaje.nombre.toLowerCase().includes(stringFiltro.value.toLowerCase())
     );
     if (personajesFiltrados.length === 0) {
-      mensajeHTML.textContent =
-        "No se encontró ningún resultado con eses criterio de búsqueda";
+      gestionarMensajeUsuario(
+        "No se encontró ningún resultado con eses criterio de búsqueda"
+      );
     } else {
-      mensajeHTML.textContent = "";
+      gestionarMensajeUsuario('');
     }
     return personajesFiltrados;
   } else {
