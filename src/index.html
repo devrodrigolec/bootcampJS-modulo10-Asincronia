@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reseteo.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Personajes de Mortadelo y Filemón</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Personajes de Mortadelo y Filemón
+      </h1>
+      <form id="formulario" class="contenedor-formulario" >
+        <input name="input-filtrar-nombre" type="text" id ='input-filtrar-nombre' class="input-filtrar-nombre">
+        <button type="submit" id="boton-filtrar" class="boton">Filtrar</button>
+      </form>
+    </header>
+    <main class="main">
+      <div id="mensaje"></div>
+      <div id="contenedor-personajes" class="contenedor">
+       
+      </div>
+    </main>
+
+    <script type="module" src="./personajes-listado.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --backgroud-color: #d5dade;
+  --verde: #84d179;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--backgroud-color);
+  font-size: 1.3rem;
+}
+
+/* Header */
+
+header {
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  max-width: 90%;
+}
+
+header h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.contenedor-formulario {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.contenedor-formulario .input-filtrar-nombre {
+  height: 3rem;
+  width: 20rem;
+
+  border: 1px solid var(--verde);
+}
+
+.contenedor-formulario .boton {
+  width: 10rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: var(--verde);
+  cursor: pointer;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 75%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .contenedor .card {
+  margin-bottom: 1rem;
+}
+
+/* Card */
+.card {
+  width: 27rem;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card img {
+  height: 20rem;
+  text-align: center;
+}
+
+.card p {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* HELPERS */
+
+.negrita {
+  font-weight: bold;
+}
+
+/* media query */
+
+@media (min-width: 920px) {
+  .contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
